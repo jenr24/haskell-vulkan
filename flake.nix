@@ -55,6 +55,19 @@
                   haskell-language-server
                   ormolu
                   pkgs.nixpkgs-fmt
+
+                  pkgs.vulkan-loader
+                  pkgs.vulkan-tools
+                  pkgs.vulkan-headers
+                  pkgs.vulkan-validation-layers
+                  pkgs.mesa
+                  pkgs.SDL2
+                  pkgs.libGL
+                  pkgs.shaderc
+                  pkgs.xorg.libX11
+                  pkgs.xorg.libXi
+                  pkgs.xorg.libXcursor
+                  pkgs.xorg.libXinerama
                 ]);
           };
       in

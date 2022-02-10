@@ -39,6 +39,9 @@ executable vulkan-haskell
     , text
     , time
     , with-utf8
+    , vulkan
+    , sdl2
+    , vector
 
   mixins:
     base hiding (Prelude),
