@@ -14,6 +14,7 @@ import Control.Algebra
 import Control.Carrier.State.Strict (State, get)
 import Control.Carrier.Fail.Either
 
+<<<<<<< HEAD
 main :: IO ()
 main = putStrLn "Hello, Haskell!"
 
@@ -59,3 +60,12 @@ instance (
                     NOP -> return ()
                     VAR x -> return ()
             R other -> LoggerC (alg (runLogger . hdl) other ctx)
+=======
+import Main.Utf8 (withUtf8)
+
+main :: IO ()
+main = do
+  -- For withUtf8, see https://serokell.io/blog/haskell-with-utf8
+  withUtf8 $ do
+    putStrLn "Hello 🌎"
+>>>>>>> parent of cef30e2 (added)
