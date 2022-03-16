@@ -31,15 +31,18 @@
               # Assumes that you have the 'NanoID' flake input defined.
             };
             modifier = drv:
-              pkgs.haskell.lib.addBuildTools drv (with hp; [
-                # Specify your build/dev dependencies here. 
-                cabal-fmt
-                cabal-install
-                ghcid
-                haskell-language-server
-                ormolu
-                pkgs.nixpkgs-fmt
-              ]);
+              pkgs.haskell.lib.addBuildTools drv
+                (with (if system == "aarch64-darwin"
+                then m1MacHsBuildTools
+                else hp); [
+                  # Specify your build/dev dependencies here. 
+                  cabal-fmt
+                  cabal-install
+                  ghcid
+                  haskell-language-server
+                  ormolu
+                  pkgs.nixpkgs-fmt
+                ]);
           };
       in
       {
